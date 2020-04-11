@@ -6,10 +6,13 @@ layout: default
     <div class="row">
         <div class="col-md-12 mb-2">
 <<<<<<< HEAD
+<<<<<<< HEAD
             テスト
 =======
             ほげ
 >>>>>>> c3de3b6... Update index.md
+=======
+>>>>>>> cd2d0a6... Update index.md
             当ホームページはリニューアル作業中です。<br/>
             コンテンツを随時増やしていきます。不明点などはお問い合わせにてご連絡ください。<br/>
             <br/>
