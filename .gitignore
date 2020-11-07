@@ -38,3 +38,6 @@ Icon
 
 # Ignore plugins
 *node_modules/
+
+# Ignore lock file
+*package-lock.json
