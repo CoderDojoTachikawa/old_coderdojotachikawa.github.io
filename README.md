@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### When building css
+npx tailwindcss build [assets_directory]/styles.css -o [assets_directory]/output.css
