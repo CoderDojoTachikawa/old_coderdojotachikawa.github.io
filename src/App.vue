@@ -1,19 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header />
+  <Hero msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Hero from './components/Hero.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Hero
   }
 }
 </script>
 
-<style src="./assets/output.css">
-
+<style>
+body {
+  font-family: Nanum Gothic;
+}
+h1 {
+  font-size: initial;
+  line-height: initial;
+  margin: initial;
+}
 </style>
