@@ -78,19 +78,17 @@
       class="header row"
       v-if="smallSize"
     >
-      <div class="col s4 valign-wrapper">
-        <a
-          href="#"
-          data-target="mobile-demo"
-          class="sidenav-trigger"
-        ><i class="material-icons">menu</i></a>
+      <router-link
+        class="router-link col s4 valign-wrapper"
+        to="/"
+      >
         <img
           class="circle left square-icon"
           alt="corder dojo tachikawa"
           src="../assets/dojo-logo.jpg"
         />
         <h1 class='title'>Corder Dojo 立川</h1>
-      </div>
+      </router-link>
       <div class="col s8">
         <!--ハンバーガーメニューのボタン-->
         <div
@@ -289,7 +287,7 @@ li {
   width: 64px;
   height: 56px;
   cursor: pointer;
-  z-index: 102;
+  z-index: 50;
   border: 1px solid;
   border-color: grey;
   text-align: center;
@@ -353,7 +351,7 @@ li {
 }
 .menu {
   background-color: rgba(197, 197, 197, 0.671);
-  z-index: 101;
+  z-index: 30;
   padding: 2rem 1rem;
   position: fixed;
   width: 20rem;
