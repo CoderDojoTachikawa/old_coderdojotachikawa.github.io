@@ -15,7 +15,7 @@
         <form class="col s10" v-show="!submitted" name="contactForm" method="POST" target="hidden_iframe" :action="formUrl" @submit.prevent="submitForm()">
           <div v-for="(item, index) in formData" v-bind:key="index" :item="item" :index="index">
             <div class="row">
-              <div class="input-field col s5" v-if="index!==2">
+              <div class="input-field col s5" v-if="index==0">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
                 <label :for="'entry.'+item.name">{{item.label}}</label>
               </div>
@@ -31,19 +31,16 @@
                   <label >{{item.question}}</label>
                 </p>
                 <p>
-                  <label v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx">
-                    <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="radio" :value='idx' />
+                  <label v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx" @click='checke = op'>
+                    <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="radio" v-model='checke' :value='checke' />
                     <span>{{op}}</span>
                   </label>
                 </p>
-                <!-- <select :id="'entry.'+item.name" :name="'entry.'+item.name">
-                  <option value="" disabled selected>{{item.label}}</option>
-                  <option v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx" :value="op">{{op}}</option>
-                </select> -->
               </div>
               <div class="row" v-else-if="index==3">
                 <div class="input-field col s12">
-                  <textarea :id="'entry.'+item.name" name="item.name" class="materialize-textarea" length="120"></textarea>
+                  <textarea :id="'entry.'+item.name" :name="'entry.'+item.name" class="materialize-textarea" length="120">
+                  </textarea>
                   <label :for="'entry.'+item.name">メッセージ</label>
                 </div>
               </div>
@@ -113,35 +110,25 @@ export default {
         question: 'お問い合わせ区分',
         questionType: 'radio',
         label:  'お問い合わせ区分を選択してください',
-        options: ['Dojoの活動に関するお問い合わせ', 'メンター参加について', 'ニンジャ参加について', '取材について'],
+        options: ['Dojoの活動に関するお問い合わせ', 'メンター参加について', 'Ninja参加について', 'その他'],
         validate: true
       },
       {
-        name: 1506558776,
+        name: 1668971609,
         question: 'メッセージ',
         questionType: 'text',
         label: 'メッセージ',
         validate: true
       }
       ],
-      submitted: false
+      submitted: false,
+      checke: 'その他'
     };
   },
   methods: {
     submitForm: function() {
-      this.$http.get('https://docs.google.com/forms/u/1/d/e/1FAIpQLSe2itdG3fNJkTk59WOM9rMv4E5pZ3O2A4EWDxJIYXQRfML2CQ/formResponse', function (data) {
-            for(var i = 0; i < data.length; i++){
-                this.events.push(data[i]);
-            }
-        }).error(function () {
-            // handle error
-        })
-    }
-      // var a = Array.from(document.contactForm.elements)
-      // a.filter((el) => el.checked || el.id == 'entry.842797987' || el.id == 'entry.1078512650' || el.id == 'entry.1506558776')
-
-      // document.contactForm.submit();
-    // }
+      document.contactForm.submit();
+    },
   },
   created() {
     // this.putsFormData();
@@ -152,6 +139,6 @@ export default {
     var thankyouComp = document.createElement("t-alert");
     thankyouComp.setAttribute('style', '');
     document.body.appendChild(thankyouComp);
-  },
+  }
 }
 </script>
