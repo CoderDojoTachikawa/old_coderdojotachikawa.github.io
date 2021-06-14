@@ -18,20 +18,30 @@
               <div class="input-field col s5" v-if="index!==2">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
                 <label :for="'entry.'+item.name">{{item.label}}</label>
-                <t-tag v-if="index==1" class='white-text lighten-5-text'>
+              </div>
+              <div class="input-field col s5" v-if="index==1">
+                <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
+                <label :for="'entry.'+item.name">{{item.label}}</label>
+                <t-tag class='white-text lighten-5-text'>
                   ※返信を必要とする場合は必ず記入してください
                 </t-tag>
               </div>
-              <div class="input-field col s5" v-else-if="index==3">
+              <div class="input-field col s5" v-else-if="index==2">
                 <p>
-                  <label>{{item.question}}</label>
+                  <label >{{item.question}}</label>
                 </p>
-                <select :id="'entry.'+item.name" :name="'entry.'+item.name">
+                <p>
+                  <label v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx">
+                    <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="radio" :value='idx' />
+                    <span>{{op}}</span>
+                  </label>
+                </p>
+                <!-- <select :id="'entry.'+item.name" :name="'entry.'+item.name">
                   <option value="" disabled selected>{{item.label}}</option>
                   <option v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx" :value="op">{{op}}</option>
-                </select>
+                </select> -->
               </div>
-              <div class="row" v-else-if="index==2">
+              <div class="row" v-else-if="index==3">
                 <div class="input-field col s12">
                   <textarea :id="'entry.'+item.name" name="item.name" class="materialize-textarea" length="120"></textarea>
                   <label :for="'entry.'+item.name">メッセージ</label>
@@ -98,14 +108,14 @@ export default {
         label: 'メールアドレス',
         validate: true
       },
-      // {
-      //   name: 1668971609,
-      //   question: 'お問い合わせ区分',
-      //   questionType: 'pulldown',
-      //   label:  'お問い合わせ区分を選択してください',
-      //   options: ['運営について', 'ボランティア参加について', 'ニンジャ参加について', '取材について'],
-      //   validate: true
-      // },
+      {
+        name: 781055325,
+        question: 'お問い合わせ区分',
+        questionType: 'radio',
+        label:  'お問い合わせ区分を選択してください',
+        options: ['Dojoの活動に関するお問い合わせ', 'メンター参加について', 'ニンジャ参加について', '取材について'],
+        validate: true
+      },
       {
         name: 1506558776,
         question: 'メッセージ',
@@ -119,12 +129,19 @@ export default {
   },
   methods: {
     submitForm: function() {
-      document.contactForm.submit();
-      // document.contactForm.submit().then(result => {
-      //   //Slackに通知
-      //   result
-      // });
+      this.$http.get('https://docs.google.com/forms/u/1/d/e/1FAIpQLSe2itdG3fNJkTk59WOM9rMv4E5pZ3O2A4EWDxJIYXQRfML2CQ/formResponse', function (data) {
+            for(var i = 0; i < data.length; i++){
+                this.events.push(data[i]);
+            }
+        }).error(function () {
+            // handle error
+        })
     }
+      // var a = Array.from(document.contactForm.elements)
+      // a.filter((el) => el.checked || el.id == 'entry.842797987' || el.id == 'entry.1078512650' || el.id == 'entry.1506558776')
+
+      // document.contactForm.submit();
+    // }
   },
   created() {
     // this.putsFormData();
