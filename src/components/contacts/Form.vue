@@ -70,18 +70,36 @@
 select {
   display: block;
 }
-textarea {
+textarea.materialize-textarea {
+  border-bottom: solid 1px #fff;
+  color: #fff;
+  font-size: 1.6rem;
   height: 10rem;
 }
-input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
-  color: #fff;
+.input-field > label, button {
+  font-size: 1.6rem;
 }
-input[type="text"]:not(.browser-default):focus:not([readonly]), input.valid[type="text"]:not(.browser-default) {
-  box-shadow: 0 1px 0 0 #fff;
+input[type="text"]:not(.browser-default) {
+  border-bottom: solid 1px #fff;
+  font-size: 1.6rem;
+  height: 4rem;
 }
 .waves-effect {
   color: #2F7DC0;
   background-color: #fafafa;
+}
+
+
+@media screen and (max-width:599px) {
+  .form-container {
+    background-color: #2F7DC0;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 800px;
+    width: 100%;
+  }
 }
 </style>
 
