@@ -17,21 +17,21 @@
             <div class="row">
               <div class="input-field col s5" v-if="index==0">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
-                <label :for="'entry.'+item.name">{{item.label}}</label>
+                <label :for="'entry.'+item.name" class="white-text">{{item.label}}</label>
               </div>
               <div class="input-field col s5" v-if="index==1">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
-                <label :for="'entry.'+item.name">{{item.label}}</label>
+                <label :for="'entry.'+item.name" class="white-text">{{item.label}}</label>
                 <t-tag class='white-text lighten-5-text'>
                   ※返信を必要とする場合は必ず記入してください
                 </t-tag>
               </div>
               <div class="input-field col s5" v-else-if="index==2">
                 <p>
-                  <label >{{item.question}}</label>
+                  <label class="white-text">{{item.question}}</label>
                 </p>
                 <p>
-                  <label v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx" @click='checke = op'>
+                  <label v-for="(op, idx) in item.options" v-bind:key="op" :item="op" :index="idx" @click='checke = op' class="white-text">
                     <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="radio" v-model='checke' :value='checke' />
                     <span>{{op}}</span>
                   </label>
@@ -41,7 +41,7 @@
                 <div class="input-field col s12">
                   <textarea :id="'entry.'+item.name" :name="'entry.'+item.name" class="materialize-textarea" length="120">
                   </textarea>
-                  <label :for="'entry.'+item.name">メッセージ</label>
+                  <label :for="'entry.'+item.name" class="white-text">メッセージ</label>
                 </div>
               </div>
               <div v-else></div>
