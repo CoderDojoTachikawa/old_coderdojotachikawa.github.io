@@ -108,7 +108,7 @@
             class="menu"
             v-show="ActiveBtn"
           >
-            <ul id="test">
+            <ul>
               <li>
                 <router-link class="router-link" to="/">
                   トップ
@@ -125,8 +125,13 @@
                 </router-link>
               </li>
               <li>
+                <a class="router-link" href="https://coderdojo-tachikawa.connpass.com/">
+                  次回の開催予定
+                </a>
+              </li>
+              <li>
                 <router-link class="router-link" to="/events">
-                  開催の様子
+                  開催報告
                 </router-link>
               </li>
               <li>
@@ -245,8 +250,8 @@ li {
   margin: 12px;
 }
 img.line-img {
-  height: 32px;
-  }
+  max-width: 8.4rem;
+}
 .square-icon {
   height: 48px;
   width: 48px;
