@@ -10,38 +10,38 @@
           ご支援・ご協力をお願い致します。<br>
         </t-tag>
         <t-tag tag-name="p" variant="body" class='pt-5 text-2xl leading-8 tracking-tight font-display text-gray-900 sm:text-xl sm:leading-9'>
-          ご支援・ご協力をお願い致します。
+          ※こちらのページは作成中です。
         </t-tag>
       </div>
       </div>
-    <hooper :settings="hooperSettings">
+    <hooper class='for-prod' :settings="hooperSettings">
       <slide>
         <div class="images img1">
-          
+
           <video src="../../assets/loop_1/1.mp4" loop autoplay controls></video>
         </div>
       </slide>
-      <slide>          
+      <slide>
         <div class="images img2">
-          
+
           <video src="../../assets/loop_1/2.mp4" loop autoplay controls></video>
-        </div> 
+        </div>
       </slide>
-      <slide>          
+      <slide>
         <div class="images img3">
-          
+
           <video src="../../assets/loop_1/1.mp4" loop autoplay controls></video>
-        </div>       
+        </div>
       </slide>
-      <slide>  
+      <slide>
         <div class="images img4">
-          
+
           <video src="../../assets/loop_1/1.mp4" loop autoplay controls></video>
-        </div> 
+        </div>
       </slide>
-      <slide>     
+      <slide>
         <div class="images img5">
-          
+
           <video src="../../assets/loop_1/1.mp4" loop autoplay controls></video>
         </div>
       </slide>
@@ -62,10 +62,10 @@ main { width: 100%; }
   position: absolute;
   z-index: 2;
   height: 640px;
-  width: 30%;
+  /* width: 30%; */
   left: 0;
   background: #fff;
-  text-align: center; 
+  text-align: center;
 }
 .support_back-box div{
   position: absolute;
@@ -80,7 +80,7 @@ main { width: 100%; }
   align-items: center;
   height: 640px;
   width: 100%;
-  
+
 }
 video {
   max-height: 320px;
@@ -124,6 +124,9 @@ h2 {
   flex-direction: row;
   align-items: center;
 }
+.for-prod {
+  display: none;
+}
 </style>
 
 <script>
@@ -160,7 +163,7 @@ h2 {
                       }
 
                     }
-                }   
+                }
             }
         }
     };

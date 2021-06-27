@@ -47,7 +47,7 @@
       </ul>
       <div class="row s6 valign-wrapper">
         <img class="circle left square-icon" alt="corder dojo tachikawa" src="../assets/dojo-logo.jpg" />
-        <h6 class='copyright'>C2020 Corder Dojo Tachikawa</h6>
+        <h6 class='copyright'>©2021 Corder Dojo Tachikawa</h6>
       </div>
     </nav>
   </footer>
