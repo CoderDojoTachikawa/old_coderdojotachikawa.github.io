@@ -14,9 +14,9 @@
           </router-link>
         </li>
         <li>
-          <router-link class="router-link" to="/members">
+          <a class="router-link" href="https://activo.jp/articles/72556?via=user105899">
             メンバー募集
-          </router-link>
+          </a>
         </li>
         <li>
           <a class="router-link" href="https://coderdojo-tachikawa.connpass.com/">

@@ -45,16 +45,6 @@ export default new Router({
       }
     },
     {
-      path: '/members',
-      name: 'member',
-      component: App
-    },
-    {
-      path: '/events',
-      name: 'events',
-      component: App
-    },
-    {
       path: '/support',
       name: 'support',
       components: {
