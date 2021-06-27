@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="form-container relative overflow-hidden row">
+    <div id='hidden_for_sp' class="form-container relative overflow-hidden row">
       <main class='container flex items-center'>
         <t-tag variant="heading" class='text-center text-2xl leading-8 font-semibold tracking-tight font-display white-text lighten-5-text sm:text-3xl sm:leading-9'>
           お問い合わせ
@@ -10,22 +10,25 @@
       </main>
     </div>
     <div class="form-container relative overflow-hidden row">
-      <div class="container">
+      <div class="container sp-margin">
+        <t-tag variant="heading" class='text-center text-2xl leading-8 font-semibold tracking-tight font-display white-text lighten-5-text sm:text-3xl sm:leading-9'>
+          お問い合わせ
+        </t-tag>
         <form class="col s10" name="contactForm" method="POST" target="hidden_iframe" :action="formUrl" @submit.prevent="submitForm()">
           <div v-for="(item, index) in formData" v-bind:key="index" :item="item" :index="index">
             <div class="row">
-              <div class="input-field col s5" v-if="index==0">
+              <div class="input-field col" v-if="index==0">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate" required>
                 <label :for="'entry.'+item.name" class="white-text">{{item.label}}</label>
               </div>
-              <div class="input-field col s5" v-if="index==1">
+              <div class="input-field col" v-if="index==1">
                 <input :id="'entry.'+item.name" :name="'entry.'+item.name" type="text" class="validate">
                 <label :for="'entry.'+item.name" class="white-text">{{item.label}}</label>
                 <t-tag class='white-text lighten-5-text'>
                   ※返信を必要とする場合は必ず記入してください
                 </t-tag>
               </div>
-              <div class="input-field col s5" v-else-if="index==2">
+              <div class="input-field col" v-else-if="index==2">
                 <p>
                   <label class="white-text">{{item.question}}</label>
                 </p>
@@ -87,7 +90,6 @@ input[type="text"]:not(.browser-default) {
   background-color: #fafafa;
 }
 
-
 @media screen and (max-width:599px) {
   .form-container {
     background-color: #2F7DC0;
@@ -95,8 +97,14 @@ input[type="text"]:not(.browser-default) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 800px;
+    height: initial;
     width: 100%;
+  }
+  #hidden_for_sp {
+    display: none;
+  }
+  .sp-margin {
+    margin-top:calc(64px + 1.6rem);
   }
 }
 </style>

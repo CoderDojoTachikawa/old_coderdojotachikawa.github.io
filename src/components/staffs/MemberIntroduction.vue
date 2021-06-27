@@ -16,7 +16,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  font-size: xx-large; 
+  font-size: xx-large;
   margin: 1em;
 }
 

@@ -1,19 +1,13 @@
-<template id="app">
-<main class='flex items-center'>
+<template>
+  <div class='flex items-center min-h-300'>
 
-  <!-- メンバー紹介サイトを組み込みます -->
-  <div class="w-screen min-h-300 bg-white">
-    <iframe src="https://member-cd.web.app/?dojo=tachikawa" width="99%" id="member-frame" frameborder="0" scrolling="yes" allowfullscreen></iframe>
-  </div> 
+    <!-- メンバー紹介サイトを組み込みます -->
+    <div class="w-screen bg-white">
+      <iframe style="height: 44rem;" src="https://member-cd.web.app/?dojo=tachikawa" width="99%" id="member-frame" frameborder="0" scrolling="yes" allowfullscreen></iframe>
+    </div>
 
-</main>
+  </div>
 </template>
-
-<style scoped>
-#app {
-  display: flex;
-}
-</style>
 
 <script>
   // 高さを自動調整します

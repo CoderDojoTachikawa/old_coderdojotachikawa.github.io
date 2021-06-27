@@ -71,11 +71,6 @@
       v-if="smallSize"
     >
       <div class="col s4 valign-wrapper">
-        <a
-          href="#"
-          data-target="mobile-demo"
-          class="sidenav-trigger"
-        ><i class="material-icons">menu</i></a>
         <img
           class="circle left square-icon"
           alt="corder dojo tachikawa"
@@ -130,9 +125,9 @@
                 </a>
               </li>
               <li>
-                <router-link class="router-link" to="/events">
+                <a class="router-link" href="https://coderdojotachikawa.tamaliver.jp/">
                   開催報告
-                </router-link>
+                </a>
               </li>
               <li>
                 <router-link class="router-link" to="/support">
